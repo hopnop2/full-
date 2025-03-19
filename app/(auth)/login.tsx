@@ -24,8 +24,8 @@ export default function login() {
 
   // กำหนดตัวแปร State สำหรับเก็บค่าของ Email และ Password
   const [form, setForm] = useState({
-    email: "hanaseed191@gmail.com",
-    password: "123456789",
+    email: "gamertoy3366@gmail.com",
+    password: "Jamebon091",
   });
 
   // กำหนดตัวแปรเก็บสถานะการ submit ข้อมูล

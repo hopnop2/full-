@@ -242,13 +242,14 @@ export default function EditProduct() {
                   return;
                 }
               }
-              setAlertConfig(prev => ({ ...prev, visible: false }));
-              await new Promise(resolve => setTimeout(resolve, 500));
+              // setAlertConfig(prev => ({ ...prev, visible: false }));
+              // await new Promise(resolve => setTimeout(resolve, 500));
               const result = await ImagePicker.launchCameraAsync({
                 mediaTypes: ['images'],
                 quality: 0.5,
                 base64: true,
               });
+              setAlertConfig(prev => ({ ...prev, visible: false }));
               if (!result.canceled) {
                 handleImageResult(result);
               }
@@ -275,8 +276,8 @@ export default function EditProduct() {
                   return;
                 }
               }
-              setAlertConfig(prev => ({ ...prev, visible: false }));
-              await new Promise(resolve => setTimeout(resolve, 500));
+              // setAlertConfig(prev => ({ ...prev, visible: false }));
+              // await new Promise(resolve => setTimeout(resolve, 500));
               const result = await ImagePicker.launchImageLibraryAsync({
                 mediaTypes: ['images'],
                 allowsMultipleSelection: true,
@@ -284,6 +285,7 @@ export default function EditProduct() {
                 base64: true,
                 selectionLimit: remainingSlots,
               });
+              setAlertConfig(prev => ({ ...prev, visible: false }));
               if (!result.canceled) {
                 handleImageResult(result);
               }

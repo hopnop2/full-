@@ -203,13 +203,14 @@ export default function Create() {
                   return;
                 }
               }
-              setAlertConfig(prev => ({ ...prev, visible: false }));
-              await new Promise(resolve => setTimeout(resolve, 500));
+              // setAlertConfig(prev => ({ ...prev, visible: false }));
+              // await new Promise(resolve => setTimeout(resolve, 500));
               const result = await ImagePicker.launchCameraAsync({
                 mediaTypes: ['images'],
                 quality: 0.5,
                 base64: true,
               });
+              setAlertConfig(prev => ({ ...prev, visible: false }));
               if (!result.canceled) {
                 handleImageResult(result);
               }
@@ -236,8 +237,8 @@ export default function Create() {
                   return;
                 }
               }
-              setAlertConfig(prev => ({ ...prev, visible: false }));
-              await new Promise(resolve => setTimeout(resolve, 500));
+              // setAlertConfig(prev => ({ ...prev, visible: false }));
+              // await new Promise(resolve => setTimeout(resolve, 500));
               const result = await ImagePicker.launchImageLibraryAsync({
                 mediaTypes: ['images'],
                 allowsMultipleSelection: true,
@@ -245,6 +246,7 @@ export default function Create() {
                 base64: true,
                 selectionLimit: MAX_IMAGES - imageUris.length,
               });
+              setAlertConfig(prev => ({ ...prev, visible: false }));
               if (!result.canceled) {
                 handleImageResult(result);
               }

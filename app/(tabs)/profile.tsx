@@ -136,8 +136,8 @@ export default function Profile() {
                   return;
                 }
               }
-              setAlertConfig(prev => ({ ...prev, visible: false }));
-              await new Promise(resolve => setTimeout(resolve, 500));
+              // setAlertConfig(prev => ({ ...prev, visible: false }));
+              // await new Promise(resolve => setTimeout(resolve, 500));
               const result = await ImagePicker.launchCameraAsync({
                 mediaTypes: ['images'],
                 allowsEditing: true,
@@ -145,6 +145,7 @@ export default function Profile() {
                 quality: 1,
                 base64: true,
               });
+              setAlertConfig(prev => ({ ...prev, visible: false }));
               if (!result.canceled) {
                 await handleImageResult(result);
               }
@@ -171,8 +172,8 @@ export default function Profile() {
                   return;
                 }
               }
-              setAlertConfig(prev => ({ ...prev, visible: false }));
-              await new Promise(resolve => setTimeout(resolve, 500));
+              // setAlertConfig(prev => ({ ...prev, visible: false }));
+              // await new Promise(resolve => setTimeout(resolve, 500));
               const result = await ImagePicker.launchImageLibraryAsync({
                 mediaTypes: ['images'],
                 allowsEditing: true,
@@ -180,6 +181,7 @@ export default function Profile() {
                 quality: 1,
                 base64: true,
               });
+              setAlertConfig(prev => ({ ...prev, visible: false }));
               if (!result.canceled) {
                 await handleImageResult(result);
               }
